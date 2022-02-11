@@ -30,7 +30,6 @@ class a {
         return "<a href={$this->getUrl()}>{$this->getTexto()} </a>";
     }
 
-    //https://www.w3schools.com/
 }
 
 $oLink = new a();
