@@ -1,14 +1,22 @@
 <?php
 
-require_once 'libs/cabecalho.html';
 require ('autoload.php');
 
-$oTeste[] = new li('', 'Teste');
-$oTeste[] = new li('', 'Teste2');
-$oTeste[] = new li('', 'Teste3');
-$oTeste[] = new li('', 'Teste4');
-$oTeste[] = new li('', 'Teste5');
+$oHead = new head([]);
+$oHead->addItem(new meta('charset="UTF-8"'));
+$oHead->addItem(new meta('http-equiv="X-UA-Compatible" content="IE=edge"'));
+$oHead->addItem(new meta('name="viewport" content="width=device-width, initial-scale=1.0"'));
+$oHead->addItem(new title('Teste'));
 
-echo new ul('', $oTeste);
+$oBody = new body([new table('', [])]);
+/*$aColunas = [
+    'Coluna 1',
+    'Coluna 2',
+    'Coluna 3',
+    'Coluna 4',
+];
+$oTr = new tr();
+$oBody->addItem(new table('', [new tr('', [new td('', 'Teste')])]));
 
-require_once 'libs/rodape.html';
+*/
+echo new html([$oHead, $oBody], 'pt-br');
