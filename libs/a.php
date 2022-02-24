@@ -48,19 +48,9 @@ class a {
         return $this->class;
     }
 
+    public function __toString(){
+        return "<a href={$this->getUrl()} target={$this->getTarget()} class={$this->getClass()}>{$this->getTexto()} </a>";;
+   }
+
 }
 
-$oLink = new a();
-$oLink->setUrl('https://www.unidavi.edu.br');
-$oLink->setTexto('Unidavi');
-$oLink->setClass('botao');
-$oLink->setTarget('_parent');
-
-echo $oLink->getLink();
-echo '<br>';
-$oLink2 = new a();
-$oLink2->setTexto('site2.com');
-echo $oLink2->getLink();
-echo '<br>';
-$oLink3 = new a('https://www.unidavi.edu.br', 'Unidavi2');
-echo $oLink3->getLink();

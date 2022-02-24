@@ -1,6 +1,6 @@
 <?php
 
-class td {
+class th {
 
     private $css;
     private $nome;
@@ -37,7 +37,6 @@ class td {
     }
     
     public function __toString(){
-         return "<td style='border:solid 1px' class='{$this->getCss()}'>{$this->getConteudo()}</td>";
+         return "<th style='border:solid 1px' class='{$this->getCss()}'>{$this->getConteudo()}</th>";
     }
-
 }

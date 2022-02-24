@@ -2,19 +2,26 @@
 
 require ('autoload.php');
 
-
-$aColunas = [
-    new td('campo', 'Coluna 1'),
-    new td('campo', 'Coluna 2'),
-    new td('campo', 'Coluna 3'),
-    new td('campo', 'Coluna 4'),
+$aTitulos = [
+    'coluna1' => 'Coluna 1',
+    'coluna2' => 'Coluna 2',
+    'coluna3' => 'Coluna 3',
+    'coluna4' => 'Coluna 4',
+    'coluna5' => 'Coluna 5',
+    'coluna6' => 'Coluna 6',
 ];
 $aLinhas = [
-    new tr('linha', $aColunas),
-    new tr('linha', $aColunas),
-    new tr('linha', $aColunas),
+    'coluna1' => 'Teste 1',
+    'coluna2' => 'Teste 2',
+    'coluna3' => 'Teste 3',
+    'coluna4' => 'Teste 4',
+    'coluna5' => 'Teste 5',
+    'coluna6' => 'Teste 6',
 ];
-$oBody = new body([new table('tabela', $aLinhas)]);
+$oTabela = new table('', $aTitulos, $aLinhas);
+
+$oBody = new body([]);
+$oBody->addItem($oTabela);
 
 echo new html([criaHead(), $oBody], 'pt-br');
 
