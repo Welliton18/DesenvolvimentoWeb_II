@@ -1,6 +1,7 @@
 <?php
 
 require ('autoload.php');
+require ('parametros.php');
 
 $aTitulos = [
     'coluna1' => 'Coluna 1',

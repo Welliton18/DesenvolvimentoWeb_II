@@ -49,7 +49,7 @@ class a {
     }
 
     public function __toString(){
-        return "<a href={$this->getUrl()} target={$this->getTarget()} class={$this->getClass()}>{$this->getTexto()} </a>";;
+        return "<a href={$this->getUrl()} target={$this->getTarget()} class={$this->getClass()}>{$this->getTexto()} </a>";
    }
 
 }
