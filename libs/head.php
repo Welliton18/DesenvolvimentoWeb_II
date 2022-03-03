@@ -1,33 +1,19 @@
 <?php
 
-class head {
-
-    private $itens = [];
+class Head {
     
-    public function __construct(array $aItens){
-        $this->setItens($aItens);
+    private $aListElement = array();
+    
+    public function addElement($sElement) {
+        $this->aListElement[] = $sElement;
     }
 
-    public function setItens(array $aItens){
-        $this->itens = $aItens;
-    }
-    
-    public function getItens(){
-        return $this->itens;
-    }
-    
-    public function addItem($sItem){
-        $this->itens[] = $sItem;
-    }
-    
     public function __toString(){
-        $sRetorno = "<head> ";
-        foreach ($this->getItens() as $sItem) {
-            $sRetorno .= $sItem;
+        $sHead = "<head>\n";
+        foreach ($this->aListElement as $sItemListElement) {
+            $sHead .= $sItemListElement;
         }
-        $sRetorno.= "</head>";
-        return $sRetorno;
-        
+        $sHead .= "</head>\n";
+        return $sHead;
     }
-
 }

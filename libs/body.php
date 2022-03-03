@@ -1,31 +1,23 @@
 <?php
+class Body {
 
-class body {
-
-    private $itens = [];
+    private $class;
+    private $aListElement = array();
     
-    public function __construct(array $aItens){
-        $this->setItens($aItens);
+    public function __construct($sClass) {
+        $this->class = $sClass;
     }
 
-    public function setItens(array $aItens){
-        $this->itens = $aItens;
+    public function addElement($sElement) {
+        $this->aListElement[] = $sElement;
     }
-    
-    public function getItens(){
-        return $this->itens;
-    }
-    
-    public function addItem($sItem){
-        $this->itens[] = $sItem;
-    }
-    
+
     public function __toString(){
-        $sRetorno = "<body>";
-        foreach ($this->getItens() as $sItem) {
-            $sRetorno .= $sItem;
+        $sBody = "<body class=\"{$this->class}\">\n";
+        foreach ($this->aListElement as $sItemListElement) {
+            $sBody .= $sItemListElement;
         }
-        return $sRetorno.= "</body>";
+        $sBody .= "</body>\n";
+        return $sBody;
     }
-
 }

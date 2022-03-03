@@ -8,5 +8,5 @@
     define('DB_SERVER','localhost');
     define('DB_USER','root');
     define('DB_SENHA','');
-    define('DB_BASE','aula_06_10');
+    define('DB_BASE','desenvolvimento_webII');
     define('REGISTROS_PAGINA','5');

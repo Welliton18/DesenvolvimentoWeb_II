@@ -1,10 +1,11 @@
 <?php
+
 class Conexao {
 
-  private $username   = DB_USER;
-  private $password   = DB_SENHA;
-  private $banco      = DB_BASE;
-  private $host       = DB_SERVER;
+  private $username   = 'root';
+  private $password   = '';
+  private $banco      = 'desenvolvimento_webII';
+  private $host       = 'localhost';
   private $conn;
 
   public function __construct() {
@@ -25,7 +26,12 @@ class Conexao {
   public function getSelect($sql) {
     $stmt = $this->conn->prepare($sql);
     $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_NUM);
+    // return $stmt->fetchAll(PDO::FETCH_NUM);
+    // return $stmt->fetchObject(__CLASS__);
+    $valores = array();
+    while ($valor = $stmt->fetchObject(__CLASS__)) {
+        $valores[] = $valor;
+    }
+    return $valores;
   }
 }
-
