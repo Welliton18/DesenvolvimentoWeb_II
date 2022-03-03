@@ -4,7 +4,7 @@ class table {
 
     private $css;
     private $itens = [];
-    private $titulos = [];
+    private $titulos = [];  
     private $paginaAtual;
     private $totalRegistros;
     private $registrosPagina = REGISTROS_PAGINA;

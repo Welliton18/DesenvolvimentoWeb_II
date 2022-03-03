@@ -21,8 +21,16 @@ $aLinhas = [
 ];
 $oTabela = new table('', $aTitulos, $aLinhas);
 
+$oMenuConteudo = new Ul('');
+$menuConteudo->addElement([
+    new li("list-group-item", "Pessoas"),
+    new li("list-group-item", "Produtos"),
+    new li("list-group-item", "Contas"),
+    new li("list-group-item", "Créditos"),
+    new li("list-group-item", "Débitos")
+]);
 $oBody = new body([]);
-$oBody->addItem($oTabela);
+$oBody->addItem($oMenuConteudo);
 
 echo new html([criaHead(), $oBody], 'pt-br');
 

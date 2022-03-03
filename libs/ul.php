@@ -1,41 +1,26 @@
 <?php
 
-class ul {
-
-    private $css;
-    private $itens = [];
+class Ul {
     
-    public function __construct($sCss, array $aItens){
-        $this->setCss($sCss);
-        $this->setItens($aItens);
-    }
+    private $aLista = array();
+    private $sClass;
 
-    public function setCss($sCss){
-        $this->css = $sCss;
+    public function __construct($sClass) {
+        $this->sClass = $sClass;
     }
 
-    public function getCss(){
-        return $this->css;
+    public function addElement(...$sAtributo) {
+        $this->aLista = array_merge($this->aLista, $sAtributo);
     }
- 
-    public function setItens(array $aItens){
-        $this->itens = $aItens;
-    }
-    
-    public function getItens(){
-        return $this->itens;
-    }
-    
-    public function addItem($sItem){
-        $this->itens[] = $sItem;
-    }
-    
-    public function __toString(){
-        $sRetorno = "<ul class='{$this->getCss()}'>";
-        foreach ($this->getItens() as $sItem) {
-            $sRetorno .= $sItem;
+
+    public function __toString() {
+        $sUl = '<ul class="'.$this->sClass.'">';
+        foreach ($this->aLista as $sItemLista) {
+            $sUl .= $sItemLista;
         }
-        return $sRetorno.= "</ul>";
+        $sUl .= "</ul>\n";
+        return $sUl;
     }
-
 }
+
+
